@@ -6,13 +6,13 @@ const audio_ctx = new AudioContext();
 
 // const audio = new MyAudio(audio_ctx, '/pi.mp3');
 const audios = [
-  new MyAudio(audio_ctx, '/audio/1.mp3'),
-  new MyAudio(audio_ctx, '/audio/2.mp3'),
-  new MyAudio(audio_ctx, '/audio/3.mp3'),
-  new MyAudio(audio_ctx, '/audio/4.mp3'),
-  new MyAudio(audio_ctx, '/audio/5.mp3'),
-  new MyAudio(audio_ctx, '/audio/6.mp3'),
-  new MyAudio(audio_ctx, '/audio/7.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash・audio/1.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash/audio/2.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash/audio/3.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash/audio/4.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash/audio/5.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash/audio/6.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash/audio/7.mp3'),
 ];
 
 function App() {
