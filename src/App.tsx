@@ -20,6 +20,7 @@ function App() {
   const [serialPort, setSerialPort] = useState<any>(null);
   const [lastFlashDate, setLastFlashDate] = useState<Date | null>(null);
   const [isFlashing, setIsFlashing] = useState<boolean>(false);
+
   let serialPort2: any = null;
   useEffect(() => {
     c.onopen = (event) => console.debug(event);
@@ -51,15 +52,12 @@ function App() {
   }, [lastFlashDate]);
 
   const post = async () => {
-    const res = await fetch(
-      'https://d2mlz4dv52k4e2.cloudfront.net/send_notification',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }
-    );
+    await fetch('https://d2mlz4dv52k4e2.cloudfront.net/send_notification', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     // console.log(res);
   };
 
@@ -99,6 +97,8 @@ function App() {
     console.log(random);
     writer.write(new TextEncoder().encode(random.toString()));
     writer.releaseLock();
+
+    audios[Math.floor(Math.random() * 7)].play();
   };
   return (
     <div
@@ -106,7 +106,7 @@ function App() {
       style={{ backgroundColor: isFlashing ? 'white' : 'black' }}
     >
       <div className='buttons'>
-        <button onClick={() => post()}>Send Notification</button>
+        {/* <button onClick={() => post()}>Send Notification</button> */}
         <button
           onClick={() => {
             toConnect();
@@ -119,7 +119,7 @@ function App() {
             writeSerial(serialPort);
           }}
         >
-          シリアル通信書き込み
+          フラッシュ
         </button>
       </div>
     </div>
