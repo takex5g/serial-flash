@@ -6,7 +6,7 @@ const audio_ctx = new AudioContext();
 
 // const audio = new MyAudio(audio_ctx, '/pi.mp3');
 const audios = [
-  new MyAudio(audio_ctx, '/serial-flash・audio/1.mp3'),
+  new MyAudio(audio_ctx, '/serial-flash/audio/1.mp3'),
   new MyAudio(audio_ctx, '/serial-flash/audio/2.mp3'),
   new MyAudio(audio_ctx, '/serial-flash/audio/3.mp3'),
   new MyAudio(audio_ctx, '/serial-flash/audio/4.mp3'),
